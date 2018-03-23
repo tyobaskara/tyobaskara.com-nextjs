@@ -51,7 +51,7 @@ class NewsPage extends React.Component {
                     <HeroBanner 
                         title={<h1 className="title">News Section</h1>}
                         subtitle={<h2 className="subtitle">Powered by newsapi.org</h2>}
-                        images="./static/images/news.jpg" 
+                        images="../static/images/herobanner-2.jpg" 
                         altImages="bloomberg news" 
                     />
                     

@@ -8,7 +8,7 @@
     "ndev": "next dev",
     "build": "next build",
     "nstart": "next start",
-    "heroku-start": "node server.js -p $PORT",
+    "heroku-start": "NODE_ENV=production node server.js -p $PORT",
     "start": "NODE_ENV=production node server.js -p $PORT"
   },
   "keywords": [],
