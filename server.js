@@ -16,6 +16,10 @@ app.prepare()
 
   server.listen(port, (err) => {
     if (err) throw err
-    console.log(`> Ready on http://localhost:${port}`)
+    if (port === 3000) {
+      console.log('> Ready on http://localhost:3000')
+    } else {
+      console.log('> Ready on:', port)
+    }
   })
 })
