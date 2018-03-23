@@ -3,4 +3,4 @@
 - npm install
 - npm run dev
 
-https://hello-next-vtezcrluau.now.sh
+https://tyobaskara.herokuapp.com/
