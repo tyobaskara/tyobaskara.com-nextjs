@@ -1,0 +1,36 @@
+.aboutIntro {
+    background-color: $whiteOrange1;
+    position: relative;
+    padding: 20px 0;
+    .container {
+        padding-top: 0;
+    }
+
+    &__description {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        @include sm {
+            text-align: center;
+        }
+        h3 {
+            color: $black2;
+        }
+        p {
+            line-height: 1.5;
+            color: $black3;
+            text-align: justify;
+        }
+        .btn {
+            margin-top: 25px;
+        }
+    }
+    
+    .sliderMe {
+        margin-top: -100px;
+        position: relative;
+        z-index: 10;
+        @include md {
+            margin-top: -50px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.data-loading {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    img {
+        width: 100px;
+        display: block;
+        margin: auto;
+    }
+}
+.loading-inline {
+    .data-loading {
+        position: initial;
+        top: auto;
+        left: auto;
+        transform: none;
+        img {
+            margin: 20px auto;
+        }
+    }
+}

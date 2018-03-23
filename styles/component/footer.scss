@@ -1,0 +1,24 @@
+footer {
+    background: $blue1;
+    > ul {
+        font-size: 0;
+        height: 50px;
+        vertical-align: middle;
+        text-align: center;
+        > li {
+            display: inline-block;
+            font-size: 2.4rem;
+            line-height: 50px;
+            color: $orange1;
+            margin: 0 6px;
+            a {
+                > i {
+                    color: ghostwhite;
+                    &:hover, &:active {
+                        color: $orange1;
+                    }
+                }
+            }
+        }
+    }
+}

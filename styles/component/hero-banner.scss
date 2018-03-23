@@ -1,0 +1,89 @@
+.heroBanner{
+    position: relative;
+    z-index: 1;
+    height: 50vh;
+    min-height: 385px;
+    box-shadow: 0px 0px 5px $blackNews;
+    @include sm {
+        height: 275px;
+        min-height: initial;
+    }
+    &__image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        img{
+            position: absolute;
+            top: -9999px;
+            right: -9999px;
+            bottom: -9999px;
+            left: -9999px;
+            margin: auto;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: 2;
+        }
+        &:after {
+            content: ' ';
+            position: absolute;
+            left: 0;top: 0;right: 0;bottom: 0;
+            width: 100%;height: 100%;
+            z-index: 3;
+            background: rgba(0,0,0,.2);
+        }
+    }
+    &__content {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 4;
+        text-align: center;
+        .title {
+            color: ghostwhite;
+            font-size: 5.2rem;
+            @include lg {
+                font-size: 4.6rem;
+            }
+            @include md {
+                font-size: 4rem;
+            }
+            @include xs {
+                font-size: 3.2rem;
+            }
+        }
+        .subtitle {
+            font-size: 2.4rem;
+            margin-top: 10px;
+            color: $whiteOrange2;
+            @include lg {
+                font-size: 2.2rem;
+            }
+            @include md {
+                font-size: 2rem;
+            }
+            @include xs {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+.heroBanner-fit {
+    .heroBanner {
+        position: relative;
+        height: auto;
+        min-height: auto;
+        &__image img {
+            width: 100%;
+            height: auto;
+            position: relative;
+            top: auto;
+            left: auto;
+            right: auto;
+            bottom: auto;
+        }
+
+    }
+}

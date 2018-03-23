@@ -1,0 +1,91 @@
+.btn {
+    display: inline-block;
+    padding: 15px 20px;
+    line-height: 1;
+    position: relative;
+    font-weight: 600;
+    font-size: 1.6rem;
+    @include border-radius(25px 5px 25px 5px);
+    &:hover {
+        text-decoration: none;
+        @include transition(all .3 ease-in-out);
+    }
+    &:active {
+        @include transition(all .3 ease-in-out);
+        top: 1px;
+    }
+    &.btn-wheat {
+        background: ghostwhite;
+        color: chocolate;
+        @include box-shadow(0px 0px 2px ghostwhite);
+        &:hover {
+            background: floralwhite;
+            color: chocolate;
+            @include transition(all .3s ease-in-out);
+        }
+        &:active {
+            @include box-shadow((0px 0px 1px ghostwhite inset), (0px 0px 1px white inset));
+            @include transition(all .3s ease-in-out);
+        }
+        @include sm {
+            display: block;
+            text-align: center;
+        }
+    }
+    &.btn-brown {
+        background: $darkBrown1;
+        color: $lightBrown1;
+        @include box-shadow(0px 0px 2px ghostwhite);
+        &:hover {
+            background: $brown1;
+            @include transition(all .3s ease-in-out);
+        }
+        &:active {
+            background: $brown1;
+            @include box-shadow((0px 0px 1px ghostwhite inset), (0px 0px 1px white inset));
+            @include transition(all .3s ease-in-out);
+        }
+        @include sm {
+            display: block;
+            text-align: center;
+        }
+    }
+}
+
+
+
+#btnToTop {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgba(0,0,0,.2); /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 10px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 2rem;
+    @include ssm {
+        bottom: 15px;
+        right: 15px;
+        font-size: 1.5rem;
+    }
+    
+    @include md-min {
+        &:hover {
+            background-color: $blue1; /* Add a dark-grey background on hover */
+            border: lighten($blue1, 30%);
+            @include box-shadow(0 0 2px lighten($blue1, 30%));
+        }
+    }
+    @include sm {    
+        &:active {
+            background-color: $blue1; /* Add a dark-grey background on hover */
+            border: lighten($blue1, 30%);
+            @include box-shadow(0 0 2px lighten($blue1, 30%));
+        }
+    }
+}

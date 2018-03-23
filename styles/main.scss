@@ -1,0 +1,130 @@
+@import './etc/fonts';
+@import './vendor/bootstrap';
+@import './vendor/animate';
+@import './vendor/_reset';
+@import './vendor/slick';
+@import './vendor/slick-theme';
+@import './vendor/fontawesome';
+@import './etc/variables';
+@import './etc/mixin';
+
+html, body {
+    overflow-x: hidden;
+    background: ghostwhite; font-family: 'Baumans';
+    color: $black3;
+    font-size: 62.5%; //10px
+    position: relative;
+    z-index: 0;
+} 
+* { 
+    font-family: 'Baumans', sans-serif; 
+    text-decoration: none;
+    outline: none;
+    border: none;
+    color: $black1;
+    &::selection {
+    background: rgba(239,122,22,.5); /* WebKit/Blink Browsers */
+    }
+    &::-moz-selection {
+    background: rgba(239,122,22,.5); /* Gecko Browsers */
+    }
+}
+a:hover, a:focus, a:active {
+    text-decoration: none;
+    outline: none;
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {outline: none;}
+.posRelative {position: relative;}
+.posInitial {position: initial;}
+.opOn {opacity: 0;}
+.opOff {opacity: 1;@include transition(opacity 1s ease);}
+.slick-prev { left: 15px; z-index: 25;}
+.slick-next { right: 15px; z-index: 25;}
+.slick-dots { bottom: 15px; z-index: 25;}
+.slick-dots li {
+    button:before { 
+        color: ghostwhite; 
+        font-size: 1rem;
+    }  
+    &.slick-active {
+        button:before { 
+            color: white; 
+        }   
+    }
+} 
+h1,h2,h3 {
+    font-size: 3.4rem;
+    @include lg {
+        font-size: 2.6rem;
+    }
+    @include md {
+        font-size: 2.4rem;
+    }
+    @include xs {
+        font-size: 2.2rem;
+    }
+}
+div,p,span,label {
+    font-size: 2.4rem;
+    @include lg {
+        font-size: 2rem;
+    }
+    @include md {
+        font-size: 1.8rem;
+    }
+    @include xs {
+        font-size: 1.6rem;
+    }
+}
+.orgTitle {
+    position: relative;
+    display: inline-block;
+    color: $black2;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    &::after {
+        content: ' ';
+        position: absolute;
+        bottom: 0;
+        left: 0; right: 0;
+        display: block;
+        width: 105%;
+        height: 4px;
+        margin: auto;
+        background: $orange1;
+        transform: rotate(-2deg);
+
+    }
+}
+.container{
+    &--wrap {
+        padding: 50px 15px;
+        @include ssm {
+            padding: 25px 15px;
+        }
+        .orgTitle {
+            margin-bottom: 50px;
+            @include sm {
+                margin-bottom: 25px;
+            }
+        }
+    }
+}
+// SLICK SLIDER
+.slick-slider {
+    visibility: hidden;
+    &.slick-initialized {
+        visibility: visible;
+    }
+}
+
+@import './component/button';
+@import './component/loading';
+@import './component/fake-loading';
+@import './component/navigation';
+@import './component/sliderme';
+@import './component/about-intro';
+@import './component/hero-banner';
+@import './component/footer';
+@import './component/blog-list';
+@import './component/news';

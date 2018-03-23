@@ -1,0 +1,107 @@
+.sliderMe {
+    @include box-shadow(-2px 2px 2px ghostwhite);
+    @include border-radius(25px 5px 25px 5px);
+    .slick-slider {
+        overflow: hidden;
+        visibility: hidden;
+        &.slick-initialized {
+            visibility: visible;
+        }
+    }
+    .slick-slide {
+        img {
+            min-height: 290px;
+            max-width: 555px;
+            max-height: 555px;
+            width: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            @include border-radius(25px 5px 25px 5px);
+            border: 2px solid wheat;;
+            @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+                min-height: 290px;
+                max-width: 555px;
+                max-height: 555px;
+                -o-object-fit: cover;
+                object-fit: cover;
+           }
+
+        }
+    }
+
+    .slick-dots {
+        li {
+            button {
+                &:before {
+                    content: "\f070";
+                    -moz-osx-font-smoothing: grayscale;
+                    -webkit-font-smoothing: antialiased;
+                    display: inline-block;
+                    font-style: normal;
+                    font-variant: normal;
+                    text-rendering: auto;
+                    line-height: 1;
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    color: ghostwhite;
+                }
+            }
+            &.slick-active, &:hover {
+                button {
+                    &:before {
+                        content: "\f06e";
+                    }
+                }
+            }
+        }
+    }
+
+    .slick-arrow {
+        background: transparent;
+        height: calc(100% - 5px);
+        width: 75px;
+        @include transition(all .2s ease-in-out);
+        @include sm {
+            width: 50px;
+        }
+        &:before {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+        }
+        &.slick-next {
+            right: 0;
+            @include border-radius(0 5px 25px 0);
+            &:before {
+                content: "\f054";
+            }
+            &:hover {
+                background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000',GradientType=1 ); /* IE6-9 */
+                @include transition(all .2s ease-in-out);
+            }
+        }
+        &.slick-prev {
+            left: 0;
+            @include border-radius(25px 0 0 5px);
+            &:before {
+                content: "\f053";
+            }
+            &:hover {
+                background: -moz-linear-gradient(left, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+                @include transition(all .2s ease-in-out);
+            }
+        }
+    }
+}

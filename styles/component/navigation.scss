@@ -1,0 +1,233 @@
+.ovHidden {overflow: hidden;}
+nav { .container { padding-top: 0; padding-bottom: 0} }
+.nav {
+    &__logo {
+        a {
+            display: inline-block;
+        }
+        position: absolute;
+        left: 15px;
+        bottom: 0;
+        top: 0;
+        @include md {
+            position: relative;
+            display: inline-block;
+            left: auto;
+        }
+    }
+
+    &__wrapper {
+        background: rgba(255,255,255,.05);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 25;
+        height: 50px;
+        &:before {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            // background: $blue1;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            @include transition (all .5s ease-in-out);
+        }
+    }
+
+    &--fixed {
+        padding-bottom: 50px;
+        .nav__wrapper {
+            background: $blue1;
+            @include box-shadow(0 1px 3px darken($blue1, 10%));
+        }
+        .nav__menu > li a {
+            color: white;
+        }
+    }
+
+    &--active {
+        .nav__wrapper {
+            @include box-shadow(0 1px 3px darken($blue1, 10%));
+            &:before {
+                content: ' ';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: $blue1;
+                opacity: 100;
+                @include transition (all .5s ease-in-out);
+            }
+        }
+    }
+
+    &__menu {
+        font-size: 0;
+        text-align: center;
+        padding: 0 120px;
+        @include md {
+            padding: 0;
+        }
+        > * {
+            font-size: initial;
+        }
+        > li {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            a {
+                display: inline-block;
+                padding: 15px;
+                color: ghostwhite;
+                font-size: 2.1rem;
+                &.active, &:hover {
+                    color: $orange1;
+                    @include transition(all .3s ease-in-out);
+                }
+            }
+            &:after{
+                content: '|';
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                color: wheat;
+            }
+            &:last-child{    
+                &:after{
+                    content: '';
+                }
+            }
+        }
+    }
+}
+
+.hamburgerSlim {
+    display: none;
+    @include md {
+        display: block;
+    }
+    background: transparent;
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    top: 0;
+    left: auto;
+    height: 100%;
+    width: 30px;
+    &:hover {
+        cursor: pointer;
+    }
+  
+    &:before,
+    &:after {
+        background: ghostwhite;
+        backface-visibility: hidden;
+        content: "";
+        height: 2px;
+        left: 0;
+        transition: 0.75s;
+        width: 30px;
+    }
+  
+    &:before {
+        box-shadow: ghostwhite 0 10px 0 0;
+        position: absolute;
+        top: 15px;
+    }
+  
+    &:after {
+        position: absolute;
+        bottom: 16px;
+    }
+  }
+
+.nav {
+    &__menu {
+        @include md {
+            position: fixed;
+            top: -100%;
+            left: 15px;
+            right: 15px;
+            opacity: 0;
+            @include transition(opacity .2s ease-in-out);
+            li {
+                display: block;
+                text-align: left;
+                a {
+                    display: block;
+                    background: $blue1;
+                    @include box-shadow(0 0.1px 1px $orange1);
+                    margin-bottom: 1px;
+                }
+                &:after{
+                    content: '>';
+                    right: 15px;
+                    pointer-events: none;
+                }
+                &:last-child{    
+                    &:after{
+                        content: '>';
+                    }
+                }
+            }
+        }
+    }
+
+    .overlay {
+        content: ' ';
+        position: fixed;
+        left: 0;right: 0;bottom: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .2);
+        opacity: 0;
+        z-index: 10;
+    }
+
+    &.isActive {
+        @include md {
+            .overlay {
+                top: 52px;
+                bottom: 0;
+                opacity: 100;
+                @include transition(opacity 1s ease-in-out);
+            }
+            .nav__menu {
+                top: 52px;
+                position: fixed;
+                opacity: 100;
+                z-index: 15;
+                @include transition(opacity .4s ease-in-out);
+            }
+            
+            .nav__wrapper {
+                &:before {
+                    content: ' ';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: $blue1;
+                    opacity: 100;
+                    @include transition (all .5s ease-in-out);
+                }
+            }
+        }
+
+        .hamburgerSlim {
+            &:before {
+            box-shadow: transparent 0 0 0 0;
+            top: 50%;
+            transform: rotate(225deg);
+            }
+    
+            &:after {
+            top: 50%;
+            transform: rotate(315deg);
+            }
+        }
+    
+    }
+}
