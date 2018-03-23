@@ -37,5 +37,8 @@
     "react-waypoint": "^8.0.1",
     "sass-loader": "^6.0.6",
     "styled-jsx-plugin-sass": "^0.2.4"
+  },
+  "engines": {
+    "node": "6.11.x"
   }
 }
