@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js -p $PORT",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js -p $PORT"
+    "start": "next build && NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",
