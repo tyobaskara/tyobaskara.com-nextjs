@@ -3,4 +3,4 @@
 - npm install
 - npm run dev
 
-https://tyobaskara.herokuapp.com/
+https://tyobaskaracom.herokuapp.com/
