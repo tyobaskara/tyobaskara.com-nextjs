@@ -26,6 +26,9 @@ class About extends React.Component {
         return (
             <Layout navigation="fixed">
                 <Head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+                    <meta name="author" content="Prasetya Aji Baskara" />
+                    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico" />
                     <meta name="robots" content="noindex, nofollow" />
                     <title>About - Prasetya Aji Baskara</title>
                 </Head>

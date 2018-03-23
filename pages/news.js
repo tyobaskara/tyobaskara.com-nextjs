@@ -43,6 +43,9 @@ class NewsPage extends React.Component {
         return (
             <Layout>
                 <Head>
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+                    <meta name="author" content="Prasetya Aji Baskara" />
+                    <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico" />
                     <meta name="robots" content="noindex, nofollow" />
                     <title>tyobaskara.rocks - Bloomberg and the Verge News</title>
                 </Head>
