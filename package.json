@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "gulp sass && node server.js",
-    "build": "gulp sass && next build",
-    "start": "gulp sass && next build && NODE_ENV=production node server.js"
+    "build": "gulp build && next build",
+    "start": "gulp build && next build && NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +27,7 @@
     "gulp-cssnano": "^2.1.2",
     "gulp-postcss": "^7.0.1",
     "gulp-sass": "^3.2.1",
+    "gulp-sourcemaps": "^2.6.4",
     "gulp-watch": "^5.0.0",
     "isomorphic-unfetch": "^2.0.0",
     "jquery": "^3.3.1",

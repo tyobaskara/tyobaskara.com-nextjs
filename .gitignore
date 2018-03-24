@@ -2,3 +2,5 @@
 node_modules
 *.log
 package-lock.json
+/static/maps
+/static/main.css

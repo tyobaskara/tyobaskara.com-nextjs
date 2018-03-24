@@ -3,7 +3,7 @@ const next = require('next')
 const compression = require('compression')
 
 const dev = process.env.NODE_ENV !== 'production'
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4000
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
@@ -18,8 +18,8 @@ app.prepare()
 
   server.listen(port, (err) => {
     if (err) throw err
-    if (port === 3000) {
-      console.log('> Ready on http://localhost:3000')
+    if (port === 4000) {
+      console.log('> Ready on http://localhost:4000')
     } else {
       console.log('> Ready on:', port)
     }
