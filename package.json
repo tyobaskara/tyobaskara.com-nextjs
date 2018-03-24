@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "gulp sass && node server.js",
+    "dev": "gulp build && gulp sass && node server.js",
     "build": "gulp build && next build",
     "start": "gulp build && next build && NODE_ENV=production node server.js"
   },
