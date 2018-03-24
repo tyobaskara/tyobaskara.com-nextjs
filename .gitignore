@@ -4,3 +4,4 @@ node_modules
 package-lock.json
 /static/maps
 /static/main.css
+/styles
