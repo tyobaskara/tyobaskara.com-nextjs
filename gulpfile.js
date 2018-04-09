@@ -24,7 +24,8 @@ gulp.task('sass', function() {
     .pipe(sass({ includePaths: 'node_modules/' }).on('error', sass.logError))
     .pipe(postcss([autoprefixer({ browsers: ['> 0%'] })]))
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest(destDev));
+    .pipe(gulp.dest(destDev))
+    .pipe(browserSync.stream());
 })
 
 gulp.task('sass:min', function() {
@@ -46,8 +47,11 @@ gulp.task('sass-watch', function() {
 
 // dev mode
 gulp.task('default', ['sass','sass-watch'], function() {
-  browserSync.init({
-    proxy: 'http://localhost:4000'
+  browserSync.init({ 
+    proxy: {
+      target: "http://localhost:4000",
+      ws: true
+  }
   });
 });
 
