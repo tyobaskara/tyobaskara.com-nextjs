@@ -10,14 +10,14 @@
 
 html, body {
     overflow-x: hidden;
-    background: ghostwhite; font-family: 'Baumans';
+    background: ghostwhite;
     color: $black3;
     font-size: 62.5%; //10px
+    font-family: 'Baumans', Helvetica; 
     position: relative;
     z-index: 0;
 } 
 * { 
-    font-family: 'Baumans', sans-serif; 
     text-decoration: none;
     outline: none;
     border: none;

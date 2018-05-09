@@ -40,7 +40,7 @@ gulp.task('sass:min', function() {
 gulp.task('sass-watch', function() {
   watch(cssSrc, function() { 
     runs('sass', function() {
-      browserSync.reload()
+      // browserSync.reload()
     }); 
   });
 });
@@ -49,8 +49,7 @@ gulp.task('sass-watch', function() {
 gulp.task('default', ['sass','sass-watch'], function() {
   browserSync.init({ 
     proxy: {
-      target: "http://localhost:4000",
-      ws: true
+      target: "http://localhost:4000"
   }
   });
 });

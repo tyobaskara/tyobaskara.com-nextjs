@@ -19,9 +19,9 @@ app.prepare()
   server.listen(port, (err) => {
     if (err) throw err
     if (port === 4000) {
-      console.log('> Ready on http://localhost:4000')
+      console.log('> Server Ready on http://localhost:4000 | run "gulp" in new terminal to compile css')
     } else {
-      console.log('> Ready on:', port)
+      console.log('> Server Ready on:', port)
     }
   })
 })
