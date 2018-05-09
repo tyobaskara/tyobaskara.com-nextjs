@@ -40,11 +40,7 @@ class NewsArticles extends React.Component {
         })
         .then(function(jsonResponse) {
             if(jsonResponse != null) {
-                _this.setState({ articles: jsonResponse.data.articles, loadingRequest: false}, () => {
-                    if(screen.width > 767) {
-                        equalheight('.news-wrap .eq-col');
-                    }
-                });
+                _this.setState({ articles: jsonResponse.data.articles, loadingRequest: false});
             }
         });
     }

@@ -41,11 +41,7 @@ class HeadLines extends React.Component {
         })
         .then(function(jsonResponse) {
             if(jsonResponse != null) {
-                _this.setState({ headlines: jsonResponse.data.articles, loadingRequest: false}, () => {
-                    if(screen.width > 767) {
-                        equalheight('.news-wrap .eq-col');
-                    }
-                });
+                _this.setState({ headlines: jsonResponse.data.articles, loadingRequest: false});
             }
         });
     }
@@ -60,12 +56,16 @@ class HeadLines extends React.Component {
                 )}
         );
 
-        const settings = {
+        const settings = {  
+            dots: true,
+            infinite: true,
+            arrows: false,
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            lazyload: true,
             responsive: [
-                {
-                    breakpoint: 9999,
-                    settings: "unslick"
-                },
                 {
                   breakpoint: 767,
                   settings: {        
